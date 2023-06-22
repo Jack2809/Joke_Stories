@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Joke Stories',
         home: JokePage(),
       ),

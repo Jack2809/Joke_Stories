@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joke_story/Bloc/joke_bloc/joke_event.dart';
 import 'package:joke_story/Bloc/joke_bloc/joke_state.dart';
 import 'package:joke_story/Shared_reference/storage.dart';
+import 'package:joke_story/UI/joke_page_component/copy_right.dart';
 import 'package:joke_story/UI/joke_page_component/navbar.dart';
 import 'package:joke_story/UI/joke_page_component/slogan.dart';
 import '../Bloc/joke_bloc/joke_bloc.dart';
@@ -51,6 +52,7 @@ class _JokePageState extends State<JokePage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             MyNavigationBar(),
             MySlogan(),
@@ -75,7 +77,7 @@ class _JokePageState extends State<JokePage> {
                           state.joke.jokeContent,
                           style: TextStyle(
                               color: Colors.black.withOpacity(0.5),
-                              fontSize: size.width * 0.05),
+                              fontSize: size.width * 0.04),
                         ),
                       ),
                     );
@@ -90,8 +92,8 @@ class _JokePageState extends State<JokePage> {
                           'That\'s all the jokes for today! Come back another day!',
                           style: TextStyle(
                               color: Colors.black.withOpacity(0.5),
-                              fontSize: size.width * 0.05),
-                        ),
+                              fontSize: size.width * 0.04),
+                        )
                       ),
                     );
                   } else {
@@ -101,6 +103,8 @@ class _JokePageState extends State<JokePage> {
               ),
             ),
             MyButtonBar(likeJoke: likeJoke, dislikeJoke: dislikeJoke),
+            CopyRight(),
+
           ],
         ),
       ),
