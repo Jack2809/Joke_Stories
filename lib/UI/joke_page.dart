@@ -1,10 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joke_story/Bloc/joke_bloc/joke_event.dart';
 import 'package:joke_story/Bloc/joke_bloc/joke_state.dart';
-import 'package:joke_story/Shared_reference/storage.dart';
 import 'package:joke_story/UI/joke_page_component/copy_right.dart';
 import 'package:joke_story/UI/joke_page_component/navbar.dart';
 import 'package:joke_story/UI/joke_page_component/slogan.dart';
@@ -52,39 +49,37 @@ class _JokePageState extends State<JokePage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
           children: <Widget>[
             MyNavigationBar(),
             MySlogan(),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding:  EdgeInsets.fromLTRB(16.0, size.height * 0.1, 16.0,0),
               child: BlocBuilder<JokeBloc, JokeState>(
                 builder: (context, state) {
                   if (state is LoadingJoke) {
                     return SizedBox(
-                      height: size.height * 0.2,
+                      height: size.height * 0.3,
                       child: const Center(child: CircularProgressIndicator()),
                     );
                   } else if (state is LoadedJoke) {
                     jokeId = state.joke.id;
                     return Container(
                       constraints: BoxConstraints(
-                        minHeight: size.height * 0.2,
+                        minHeight: size.height * 0.3,
                       ),
                       width: size.width,
-                      child: Center(
-                        child: Text(
-                          state.joke.jokeContent,
-                          style: TextStyle(
-                              color: Colors.black.withOpacity(0.5),
-                              fontSize: size.width * 0.04),
-                        ),
+                      child: Text(
+                        state.joke.jokeContent,
+                        style: TextStyle(
+                            color: Colors.black.withOpacity(0.5),
+                            fontSize: size.width * 0.04),
                       ),
                     );
                   } else if (state is OutOfJoke) {
                     return Container(
                       constraints: BoxConstraints(
-                        minHeight: size.height * 0.2,
+                        minHeight: size.height * 0.30,
                       ),
                       width: size.width,
                       child: Center(

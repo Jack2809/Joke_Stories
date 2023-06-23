@@ -15,14 +15,14 @@ class _MyButtonBarState extends State<MyButtonBar> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return ButtonBar(
-      alignment: MainAxisAlignment.center,
+      alignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
           decoration: BoxDecoration(color: Colors.blueAccent),
           child: TextButton(
               onPressed: widget.likeJoke,
               child: Text(
-                'This is Funny',
+                'This is Funny!',
                 style: TextStyle(color: Colors.white),
               )),
         ),
@@ -31,7 +31,7 @@ class _MyButtonBarState extends State<MyButtonBar> {
           child: TextButton(
               onPressed: widget.dislikeJoke,
               child: Text(
-                'This is not Funny',
+                'This is not Funny.',
                 style: TextStyle(color: Colors.white),
               )),
         ),
