@@ -15,7 +15,7 @@ class MyNavigationBar extends StatelessWidget {
               Container(
                 height: size.height * 0.1,
                 width:  size.width * 0.15 ,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: NetworkImage('https://static.ybox.vn/2021/10/3/1634082002072-Thi%E1%BA%BFt%20k%E1%BA%BF%20kh%C3%B4ng%20t%C3%AAn%20(27).png',
                     ),
@@ -48,8 +48,7 @@ class MyNavigationBar extends StatelessWidget {
                 ),
               ),
               const CircleAvatar(
-                backgroundImage: NetworkImage(
-                    'https://media.contentapi.ea.com/content/dam/legacy/ea/www-pvzgw2/news/2016/march/PVZGW2-stuffy-sunflower-March22-web.jpg.adapt.crop16x9.575p.jpg'),
+                backgroundImage: AssetImage('assets/avatar.png'),
                 radius: 25,
               ),
             ],
